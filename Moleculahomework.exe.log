@@ -1,0 +1,128 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Moleculahomework.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x66261DD5 в функции SymGetLineFromAddrW64(). Попытка прочесть данные по адресу 0x026AE934. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#3: TXLib [Ver: 00173a, Rev: 105], Instance: 0x004FF2C0 (32-bit), Flags: CMdrE0, Thread: 0xC18 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x6625423F in C:\Users\HP\Downloads\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txSymGetFromAddr(void*, {anonymous}::TX::Win32::SYMBOL_INFO**, {anonymous}::TX::Win32::IMAGEHLP_LINE64**, const char**, const char**, int) at C:\Users\HP\Downloads\TX\TXLib.h (9797):
+
+   9795:         {
+   9796: $       SetLastError (0);
+=> 9797: $       (_TX_CALL (MinGW::SymCleanup, (process)) && RES_(u)) || DBG_("MinGW::SymCleanup() failed");
+   9798: $       (_TX_CALL (Win32::SymCleanup, (process)) && RES_(U)) || DBG_("Win32::SymCleanup() failed");
+   9799: 
+
+# 1 in void {anonymous}::TX::_txCleanup() at C:\Users\HP\Downloads\TX\TXLib.h (7151):
+
+   7149:         { $ _txConsole_Detach (waitableParent && !externTerm); }
+   71   9508: $       bool                    inTX   = false;
+   9509: 
+=> 9510:         if (addr)                { $ inTX = _txSymGetFromAddr ((char*) addr - 1, &sym, &line,    7006:     if (retcode != 0) txOutputDebugPrintf ("%s - WARNING: %s (%d) called\n", _TX_VERSION, __func__, retcode);
+   7007: 
+=> 7008: $1  _txCleanup();
+   7009: 
+   7010:     Win32::exit (retcode);
+
+# 3 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\U  10716: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  10717: 
+=>10718: $   txGDI ((Win32::MoveToEx (dc, ROUND (x0), ROUND (y0), NULL)), dc) asserted;
+  10719: $   txGDI ((Win32::LineTo   (dc, ROUND (x1), ROUND (y1)      )), dc) asserted;
+  10720: 
+
+# 3 in void DrawContainer(Tank) at C:\Users\HP\Documents\GitHub\Phisicks\Moleculahomework.cpp (187):
+
+    185:     txSetFillColor (RGB (0, 0, 0) );
+    186:     txSetColor (RGB (255, 255, 255), 10);
+=>  187:     txLine (tank.xContainer, tank.yContainer, tank.xContainer + tank.xSzContainer, tank.yContainer);
+    188:     txLine (tank.xContainer, tank.yContainer, tank.xContainer, tank.yContainer + tank.ySzContainer);
+    189:     txLine (tank.xContainer, tank.yContainer + tank.ySzContainer, tank.xContainer + tank.xSzContainer, tank.yContainer + tank.ySzContainer);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\HP\Downloads\TX\TXLib.h
+Compiled:	Nov  7 2017 21:06:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 07 2017 21:06:56
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Moleculahomework.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Moleculahomework.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x66261DD5 в функции SymGetLineFromAddrW64(). Попытка прочесть данные по адресу 0x026AE934. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#3: TXLib [Ver: 00173a, Rev: 105], Instance: 0x004FF2C0 (32-bit), Flags: CMdrE0, Thread: 0x990 (Canvas), GetLastError(): 87 (Параметр задан неверно). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x6625423F in C:\Users\HP\Downloads\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txSymGetFromAddr(void*, {anonymous}::TX::Win32::SYMBOL_INFO**, {anonymous}::TX::Win32::IMAGEHLP_LINE64**, const char**, const char**, int) at C:\Users\HP\Downloads\TX\TXLib.h (9797):
+
+   9795:         {
+   9796: $       SetLastError (0);
+=> 9797: $       (_TX_CALL (MinGW::SymCleanup, (process)) && RES_(u)) || DBG_("MinGW::SymCleanup() failed");
+   9798: $       (_TX_CALL (Win32::SymCleanup, (process)) && RES_(U)) || DBG_("Win32::SymCleanup() failed");
+   9799: 
+
+# 1 in void {anonymous}::TX::_txCleanup() at C:\Users\HP\Downloads\TX\TXLib.h (7151):
+
+   7149:         { $ _txConsole_Detach (waitableParent && !externTerm); }
+   71   9508: $       bool                    inTX   = false;
+   9509: 
+=> 9510:         if (addr)                { $ inTX = _txSymGetFromAddr ((char*) addr - 1, &sym, &line,    7006:     if (retcode != 0) txOutputDebugPrintf ("%s - WARNING: %s (%d) called\n", _TX_VERSION, __func__, retcode);
+   7007: 
+=> 7008: $1  _txCleanup();
+   7009: 
+   7010:     Win32::exit (retcode);
+
+# 3 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\U  10716: $1  if (_TX_DEFAULT_HDC_FAILE   7583: $   if (_txRunning && _txMain)         // Main window is destroyed but main() is still running.
+   7584:         {                              // No chances for good termination, so use exit().
+=> 7585: $       ::exit ((int) msg.wParam);
+   7586:         }
+   7587: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\HP\Downloads\TX\TXLib.h
+Compiled:	Nov  7 2017 21:06:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 07 2017 21:06:56
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Moleculahomework.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------

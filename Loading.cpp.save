@@ -1,0 +1,59 @@
+#include "TXLib.h"
+
+void Picture (int x, int y, int screenX, int screenY, char name);
+void Gravitationalforce(int y, int a, int t, int P, int N);
+
+int main ()
+
+    {
+    int screenX = GetSystemMetrics (SM_CXSCREEN)-50, screenY = GetSystemMetrics (SM_CYSCREEN)-100;
+    char name = 'Mario';
+    HDC Mario = txLoadImage ("Mario.bmp");
+
+    txCreateWindow (screenX, screenY);
+    Picture (0, 0, screenX, screenY, name);
+    }
+
+void Picture (int x, int y, int screenX, int screenY, char name)
+
+    {
+    txTransparentBlt (txDC(), x, y, screenX, screenY, name);
+    }
+    
+void MoveChracter ()
+
+    {
+    Picture (StartX, startY, CharacterXSz, CharacterYSz, name);
+    
+    while (!GetAsyncKeyState (VK_ESCAPE))
+    
+        {
+        if (GetAsyncKeyState (VK_RIGHT))
+        
+            {
+            StartX = x;
+            x++;
+            }
+            
+        if (GetAsyncKeyState (VK_UP))
+        
+            {
+            
+            y = (2*y + 2*voY*t + a*t*t)/2;
+            y++;
+            }
+        }
+    }
+    
+void Gravitationalforce(int y, int a, int t, int P, int N)
+
+    {
+    
+    y = y - a*t*t/2;
+    
+    if (P = N)
+    
+        {
+        a = 0;
+        }
+    }

@@ -1,0 +1,178 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe,
+
+ВНЕЗАПНО: Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x000000006AB8FAC0 в функции DrvPresentBuffers(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x0000000000568878 (64-bit), Flags: Cmdre0, Thread: 0x25B4 (Main), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000006AB8FAC0 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 1 0x000000006AB901F8 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 2 0x000000006AB8CD95 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 3 0x000000006AA7AE02 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 4 0x000000006AA8A505 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 5 0x000000006AA7D9CD in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 6 0x000000006AA764A2 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 7 0x000000006A9643A4 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 8 0x000000006A9641F1 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 9 0x000000006A9C2B0C in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#10 0x000000006A953602 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#11 0x000000006A953C17 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#12 0x000000006A8F02DF in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#13 0x000000006A8E64DF in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#14 0x000000006B1B507B in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#15 0x000000006B13CB81 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#16 0x000000006B1B8214 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#17 0x000000006B173E9F in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#18 0x000000006B172596 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#19 0x0000000069DB896E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#20 0x0000000068EDFD29 in C:\WINDOWS\sfml-graphics-d-2.dll: draw() at D:/sfml-release/_Sources/SFML/src/SFML/Graphics/RenderTarget.cpp (287)
+#21 0x0000000068EEBBDF in C:\WINDOWS\sfml-graphics-d-2.dll: draw() at D:/sfml-release/_Sources/SFML/src/SFML/Graphics/Sprite.cpp (143)
+#22 0x0000000068EDF9CF in C:\WINDOWS\sfml-graphics-d-2.dll: draw() at D:/sfml-release/_Sources/SFML/src/SFML/Graphics/RenderTarget.cpp (195)
+
+#23 0x0000000000427434 in C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/Homeworksfml.cpp (60):
+
+     58: 
+     59:         window.clear();
+=>   60:         window.draw(molecula);
+     61:         window.display();
+     62: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Dec  5 2017 21:22:06, GNU g++ 7.2.0, std=201402L, MinGW-W64 Runtime 5.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Dec 05 2017 21:23:32
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x000000006A8AFF1C в функции DrvPresentBuffers(). Попытка прочесть данные по адресу 0x0000000000000110. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#2: TXLib [Ver: 00173a, Rev: 105], Instance: 0x0000000000568878 (64-bit), Flags: Cmdre0, Thread: 0x25B4 (Main), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000006A8AFF1C in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 1 0x000000006A8C48AE in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 2 0x000000006A8B609D in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 3 0x000000006A8A5E0E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 4 0x0000000069BDD5B7 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 5 0x0000000069CD261E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 6 0x0000000069CD3606 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 7 0x0000000069CCC432 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 8 0x0000000069BE5D9A in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 9 0x0000000069C88F8F in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#10 0x000000006A747311 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#11 0x000000006A727A1E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#12 0x0000000069A54ED3 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvSwapLayerBuffers()
+#13 0x00007FFFCDD8BDE7 in C:\WINDOWS\SYSTEM32\OPENGL32.dll: wglSwapBuffers()
+#14 0x00007FFFF15F372E in C:\WINDOWS\System32\gdi32full.dll: SwapBuffers()
+#15 0x000000006E186034 in C:\WINDOWS\sfml-window-d-2.dll: display() at D:/sfml-release/_Sources/SFML/src/SFML/Window/Win32/WglContext.cpp (237)
+#16 0x000000006E184C3B in C:\WINDOWS\sfml-window-d-2.dll: display() at D:/sfml-release/_Sources/SFML/src/SFML/Window/Window.cpp (368)
+
+#17 0x0000000000427447 in C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/Homeworksfml.cpp (61):
+
+     59:         window.clear();
+     60:         window.draw(molecula);
+=>   61:         window.display();
+     62: 
+     63:         }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Dec  5 2017 21:22:06, GNU g++ 7.2.0, std=201402L, MinGW-W64 Runtime 5.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Dec 05 2017 21:23:33
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x000000006A8AFF1C в функции DrvPresentBuffers(). Попытка прочесть данные по адресу 0x0000000000000110. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 105], Instance: 0x0000000000568878 (64-bit), Flags: Cmdre0, Thread: 0x25B4 (Main), errno: 2 (No such file or directory), _doserrno: 3 (No such process). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000006A8AFF1C in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 1 0x000000006A8C48AE in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 2 0x000000006A8B609D in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 3 0x000000006A8A5E0E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 4 0x0000000069BDD5B7 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 5 0x0000000069CD261E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 6 0x0000000069CD3606 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 7 0x0000000069CCC432 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 8 0x0000000069BE5D9A in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+# 9 0x0000000069C88F8F in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#10 0x000000006A747311 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#11 0x000000006A727A1E in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvPresentBuffers()
+#12 0x0000000069A54ED3 in C:\WINDOWS\System32\DriverStore\FileRepository\c0313676.inf_amd64_96bbc33bec5c7fae\atio6axx.dll: DrvSwapLayerBuffers()
+#13 0x00007FFFCDD8BDE7 in C:\WINDOWS\SYSTEM32\OPENGL32.dll: wglSwapBuffers()
+#14 0x00007FFFF15F372E in C:\WINDOWS\System32\gdi32full.dll: SwapBuffers()
+#15 0x000000006E186034 in C:\WINDOWS\sfml-window-d-2.dll: display() at D:/sfml-release/_Sources/SFML/src/SFML/Window/Win32/WglContext.cpp (237)
+#16 0x000000006E184C3B in C:\WINDOWS\sfml-window-d-2.dll: display() at D:/sfml-release/_Sources/SFML/src/SFML/Window/Window.cpp (368)
+
+#17 0x0000000000427447 in C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/Homeworksfml.cpp (61):
+
+     59:         window.clear();
+     60:         window.draw(molecula);
+=>   61:         window.display();
+     62: 
+     63:         }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Dec  5 2017 21:22:06, GNU g++ 7.2.0, std=201402L, MinGW-W64 Runtime 5.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Dec 05 2017 21:23:33
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Homeworksfml.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------

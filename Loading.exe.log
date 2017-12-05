@@ -1,0 +1,116 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe, файл: c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h, строка: 11111, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x0000000000567878 (64-bit), Flags: CMdRe0, Thread: 0x239C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040E286 in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: _txError() at c:/users/hp/desktop/codeblocks/mingw/x86_64-w64-mingw32/include/txlib.h (8521)
+# 1 0x00000000004206B8 in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: txTransparentBlt() at c:/users/hp/desktop/codeblocks/mingw/x86_64-w64-mingw32/include/txlib.h (11111)
+
+# 2 0x00000000004271DE in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/Loading.cpp (12):
+
+     10: 
+     11:     txCreateWindow (screenX, screenY);
+=>   12:     txTransparentBlt (txDC(), 0, 0, screenX, screenY, Mario);
+     13:     }
+     14: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h (11111):
+
+  11109:     {
+  11110: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11111: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11112: 
+  11113: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at C:\Users\HP\Documents\GitHub\Phisicks\Loading.cpp (12):
+
+     10: 
+     11:     txCreateWindow (screenX, screenY);
+=>   12:     txTransparentBlt (txDC(), 0, 0, screenX, screenY, Mario);
+     13:     }
+     14: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Nov 26 2017 01:51:39, GNU g++ 7.2.0, std=201402L, MinGW-W64 Runtime 5.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Nov 26 2017 01:51:51
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe, файл: c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h, строка: 11111, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x0000000000567878 (64-bit), Flags: CMdRe0, Thread: 0x1FC4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040E286 in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: _txError() at c:/users/hp/desktop/codeblocks/mingw/x86_64-w64-mingw32/include/txlib.h (8521)
+# 1 0x00000000004206B8 in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: txTransparentBlt() at c:/users/hp/desktop/codeblocks/mingw/x86_64-w64-mingw32/include/txlib.h (11111)
+
+# 2 0x00000000004271DE in C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/Loading.cpp (12):
+
+     10: 
+     11:     txCreateWindow (screenX, screenY);
+=>   12:     txTransparentBlt (txDC(), 0, 0, screenX, screenY, Mario);
+     13:     }
+     14: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h (11111):
+
+  11109:     {
+  11110: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11111: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11112: 
+  11113: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at C:\Users\HP\Documents\GitHub\Phisicks\Loading.cpp (12):
+
+     10: 
+     11:     txCreateWindow (screenX, screenY);
+=>   12:     txTransparentBlt (txDC(), 0, 0, screenX, screenY, Mario);
+     13:     }
+     14: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\hp\desktop\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Nov 26 2017 01:51:39, GNU g++ 7.2.0, std=201402L, MinGW-W64 Runtime 5.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Nov 26 2017 01:52:30
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\Loading.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------

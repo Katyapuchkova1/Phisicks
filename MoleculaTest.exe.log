@@ -1,0 +1,148 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe,
+
+ВНЕЗАПНО: Целочисленное деление на ноль.
+
+#1: Исключение EXCEPTION_INT_DIVIDE_BY_ZERO (0xC0000094) при выполнении кода по адресу 0x00426F3B в функции Move() в файле C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp на строке 80. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x004FF2C0 (32-bit), Flags: CMdRe0, Thread: 0x15D8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426F3B in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: Move() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (80):
+
+     78: 
+     79:         {
+=>   80:         (*obj).vx = -(*obj).vx/0;
+     81:         (*obj).x = screenX-r;
+     82:         }
+
+# 1 0x00427106 in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: MoveObjects() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (133):
+
+    131: 
+    132:         {
+=>  133:         Move (&objects [i], dt, r, screenX, screenY);
+    134:         i++;
+    135:         }
+
+# 2 0x00426DFA in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: MoveObject() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (54):
+
+     52:         txClear();
+     53: 
+=>   54:         MoveObjects (objects, 0, nObjects, dt, r, screenX, screenY);
+     55: 
+     56:         DrawObjects (objects, 0, nObjects, &DrawAsSquare);
+
+# 3 0x00426C6A in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (25):
+
+     23: 
+     24:     txCreateWindow (screenX, screenY);
+=>   25:     MoveObject (screenX, screenY, 20);
+     26:     }
+     27: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in void MoveObject(int, int, int) at C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.cpp (52):
+
+     50: 
+     51:         txSetFillColor (RGB (0, 0, 0) );
+=>   52:         txClear();
+     53: 
+     54:         MoveObjects (objects, 0, nObjects, dt, r, screenX, screenY);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\HP\Downloads\TX\TXLib.h
+Compiled:	Oct 28 2017 12:30:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 28 2017 12:30:43
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe,
+
+ВНЕЗАПНО: Целочисленное деление на ноль.
+
+#1: Исключение EXCEPTION_INT_DIVIDE_BY_ZERO (0xC0000094) при выполнении кода по адресу 0x00426F3B в функции Move() в файле C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp на строке 80. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 105], Instance: 0x004FF2C0 (32-bit), Flags: CMdRe0, Thread: 0x15D8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426F3B in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: Move() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (80):
+
+     78: 
+     79:         {
+=>   80:         (*obj).vx = -(*obj).vx/0;
+     81:         (*obj).x = screenX-r;
+     82:         }
+
+# 1 0x00427106 in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: MoveObjects() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (133):
+
+    131: 
+    132:         {
+=>  133:         Move (&objects [i], dt, r, screenX, screenY);
+    134:         i++;
+    135:         }
+
+# 2 0x00426DFA in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: MoveObject() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (54):
+
+     52:         txClear();
+     53: 
+=>   54:         MoveObjects (objects, 0, nObjects, dt, r, screenX, screenY);
+     55: 
+     56:         DrawObjects (objects, 0, nObjects, &DrawAsSquare);
+
+# 3 0x00426C6A in C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe: main() at C:/Users/HP/Documents/GitHub/Phisicks/MoleculaTest.cpp (25):
+
+     23: 
+     24:     txCreateWindow (screenX, screenY);
+=>   25:     MoveObject (screenX, screenY, 20);
+     26:     }
+     27: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in void MoveObject(int, int, int) at C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.cpp (52):
+
+     50: 
+     51:         txSetFillColor (RGB (0, 0, 0) );
+=>   52:         txClear();
+     53: 
+     54:         MoveObjects (objects, 0, nObjects, dt, r, screenX, screenY);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\HP\Downloads\TX\TXLib.h
+Compiled:	Oct 28 2017 12:30:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 28 2017 12:30:44
+
+Run file:	C:\Users\HP\Documents\GitHub\Phisicks\MoleculaTest.exe
+Directory:	C:\Users\HP\Documents\GitHub\Phisicks
+
+--------------------------------------------------

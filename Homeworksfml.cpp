@@ -1,0 +1,109 @@
+//#define _TX_NOINIT
+//#include "TXLib.h"
+#include <SFML/Graphics.hpp>
+
+
+struct Object
+
+    {
+    float x, y, vx, vy;
+    };
+
+struct Point
+
+    {
+    int x, y;
+    };
+
+const Point WindowsSize = {1500, 900/*GetSystemMetrics (SM_CXSCREEN), GetSystemMetrics (SM_CYSCREEN)*/};
+
+void Move (Object* m, int r , int dt);
+
+int main ()
+
+    {
+
+    int r = 100;
+    int dt = 2;
+
+    sf::RenderWindow window (sf::VideoMode(WindowsSize.x, WindowsSize.y), "SFML works!");
+
+    sf::Texture moleculaTex;
+    bool result = moleculaTex.loadFromFile ("Molecula.png");
+    if (result == false)
+
+        {
+        printf ("Molecula.png not found");
+        return 0;
+        }
+
+    sf::Sprite molecula (moleculaTex);
+
+    //molecula.setOrigin (r, r);
+    //molecula.setColor(sf::Color::Green);
+
+    Object m = {0, 0, 15/10.0, 14/10.0};
+
+    while (window.isOpen())
+
+        {
+
+        sf::Event event;
+        while (window.pollEvent(event))
+            {
+            if (event.type == sf::Event::Closed)
+                window.close();
+            }
+
+        Move (&m, r, dt);
+        molecula.setPosition (m.x, m.y);
+
+        window.clear();
+        //window.draw(molecula);
+        window.display();
+
+        }
+
+    return 0;
+
+    }
+
+void Move (Object* m, int r , int dt)
+
+    {
+    (*m).x = (*m).x + (*m).vx*dt;
+    (*m).y = (*m).y + (*m).vy*dt;
+
+    if ((*m).x >= WindowsSize.x - r)
+
+        {
+        (*m).x = WindowsSize.x - r;
+        (*m).vx = -(*m).vx;
+        }
+
+    if ((*m).x <= 0 + r)
+
+        {
+        (*m).x = 0 + r;
+        (*m).vx = -(*m).vx;
+        }
+
+    if ((*m).y >= WindowsSize.y - r)
+
+        {
+        (*m).y = WindowsSize.y - r;
+        (*m).vy = -(*m).vy;
+        }
+
+    if ((*m).y <= 0 + r)
+
+        {
+        (*m).y = 0 + r;
+        (*m).vy = -(*m).vy;
+        }
+
+
+    }
+
+
+
