@@ -1,0 +1,200 @@
++#define _TX_NOINIT
+#include "TXLib.h"
+#include <SFML/Graphics.hpp>
+
+struct Point
+
+    {
+    float x, y;
+    };
+
+struct Object
+
+    {
+    float x, y, z, o, vx, vy, vz, vo;
+    };
+
+const Point WindowSize = {1200, 600};
+
+void Move (Object* m, int dt, int r);
+void InitializeRandom (Object objects [], int from, int nObjects);
+void MoveObjects (Object objects [], int from, int nObjects, int dt, int r);
+void DrawObjects (Object objects [], int nObjects, int from, sf::Sprite molecula, sf::RenderWindow* window);
+double TemperatureMeasuring (Object objects, int m, int from, int nObjects);
+
+int main ()
+
+    {
+
+    sf::RenderWindow window (sf::VideoMode (WindowSize.x, WindowSize.y) , "Hello");
+
+    float dt = 2, r = 10;
+    int from = 0, nObjects = 20, m = 2;
+
+    sf::Texture moleculaTex;
+    bool ok = moleculaTex.loadFromFile ("Molecula.png");
+    if (!ok) printf ("Molecula.png not found");
+    sf::Sprite molecula;
+    molecula.setTexture (moleculaTex);
+
+    sf::Font font;
+    ok = font.loadFromFile ("arial.ttf");
+    if (!ok) printf ("arial.ttf not found");
+    sf::Text text ("T = temperature", font, 30);
+
+    Object objects [nObjects];
+    //double T = TemperatureMeasuring (objects, m, from, nObjects);
+
+    while (window.isOpen())
+
+        {
+
+        sf::Event event;
+        while (window.pollEvent (event))
+            if (event.type == sf::Event::Closed)
+                {
+                window.close();
+                }
+
+        //InitializeRandom (objects, from, nObjects);
+
+        //MoveObjects (objects, from, nObjects, dt, r);
+
+        window.clear();
+
+        //DrawObjects (objects, nObjects, from, molecula, &window);
+
+        window.draw(text);
+
+        window.display();
+        }
+
+    return 0;
+
+    }
+
+void Move (Object* m, int dt, int r)
+
+    {
+    (*m).x = (*m).x + (*m).vx*dt;
+    (*m).y = (*m).y + (*m).vy*dt;
+    (*m).z = (*m).z + (*m).vz*dt;
+    (*m).o = (*m).o + (*m).vo*dt;
+
+    if ((*m).x > WindowSize.x - r)
+
+        {
+        (*m).x = WindowSize.x - r;
+        (*m).vx = - (*m).vx;
+        }
+
+    if ((*m).x < 0 + r)
+
+        {
+        (*m).x = 0 + r;
+        (*m).vx = - (*m).vx;
+        }
+
+    if ((*m).y > WindowSize.y - r)
+
+        {
+        (*m).y = WindowSize.y - r;
+        (*m).vy = - (*m).vy;
+        }
+
+    if ((*m).y < 0 + r)
+
+        {
+        (*m).y = 0 + r;
+        (*m).vy = - (*m).vy;
+        }
+
+    if ((*m).z >= 1000)
+
+        {
+        (*m).vz = - (*m).vz;
+        (*m).z = 1000;
+        }
+
+    if ((*m).z <= 0)
+
+        {
+        (*m).vz = - (*m).vz;
+        (*m).z = 0;
+        }
+
+
+    }
+
+void InitializeRandom (Object objects [], int from, int nObjects)
+
+    {
+
+    int i = from;
+
+    while (i < nObjects)
+
+        {
+        objects [i].x = rand () %100;
+        objects [i].y = rand () %100;
+        objects [i].z = rand () %100;
+        objects [i].o = rand () %10;
+        objects [i].vx = rand () %10;
+        objects [i].vy = rand () %10;
+        objects [i].vz = rand () %10;
+        objects [i].vo = rand () %10;
+
+        i++;
+        }
+    }
+
+void MoveObjects (Object objects [], int from, int nObjects, int dt, int r)
+
+    {
+    int i = from;
+
+    while (i < nObjects)
+
+        {
+        Move (&objects[i], dt, r);
+        i++;
+        }
+    }
+
+void DrawObjects (Object objects [], int nObjects, int from, sf::Sprite molecula,  sf::RenderWindow* window)
+
+    {
+    int i = from;
+
+    while (i < nObjects)
+
+        {
+        molecula.setPosition (objects[i].x, objects[i].y);
+        float scale = 500/((objects [i].z)*5 + 500);
+        molecula.setScale (scale, scale);
+        molecula.setRotation (objects [i].o);
+        molecula.setOrigin (100, 100);
+        (*window).draw (molecula);
+        }
+    }
+
+double TemperatureMeasuring (Object objects [], int m, int from, int nObjects)
+
+    {
+    const double K = 1.4e-23;
+
+    double Ek = 0;
+
+    int i = from;
+
+    while (i < nObjects)
+
+        {
+        Ek = Ek + m * ((objects[i].vx)*(objects[i].vx) + (objects[i].vy)*(objects[i].vy))/2;
+        i++;
+        }
+
+    double T = Ek/K;
+
+    return T;
+    }
